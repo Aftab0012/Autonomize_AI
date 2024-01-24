@@ -1,8 +1,10 @@
-Certainly! Below is the updated README with the provided project details, API endpoints, and additional routes:
-
 # GitHub User Data Backend
 
 Welcome to the GitHub User Data Backend, a Node.js application that interacts with the GitHub API to retrieve user data and performs various actions on the data. This backend supports a range of API endpoints for managing GitHub user information in a MongoDB database.
+
+# [Deployed Link](https://autonomize123.onrender.com)
+
+**_This active link, hosted on Render, enters sleep mode after 15 minutes of inactivity. Please allow 40 seconds for it to resume when needed._**
 
 ## Table of Contents
 
