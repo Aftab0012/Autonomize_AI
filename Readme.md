@@ -261,6 +261,15 @@ Welcome to the GitHub User Data Backend, a Node.js application that interacts wi
    POSTMAN POST :- https://localhost:3002/api/addFriend/mralexgray
   ```
 
+- **Example req.body JSON format:**
+  ```bash
+  {
+  "following": "Add_any_users_userId/mongo_Id"
+  }
+  ```
+
+````
+
 - **Example Response:**
   ```bash
   {
@@ -271,7 +280,7 @@ Welcome to the GitHub User Data Backend, a Node.js application that interacts wi
       // ... more friends
     ]
   }
-  ```
+````
 
 ## Outro
 
