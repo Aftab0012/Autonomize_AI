@@ -1,11 +1,16 @@
 const { default: axios } = require('axios');
 const User = require('../models/userModel.js');
 const Follow = require('../models/friendsModel.js');
+// const userValSchema = require('../validations/userValidations.js');
 
 const getUser = async (req, res) => {
   const { username } = req.params;
-
+  console.log(username);
   try {
+    if (typeof username !== 'string') {
+      return res.status(400).json({ error: 'Username must be a string.' });
+    }
+
     let user = await User.findOne({ username });
 
     if (!user) {
