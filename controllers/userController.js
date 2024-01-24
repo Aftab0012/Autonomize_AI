@@ -11,7 +11,7 @@ const getUser = async (req, res) => {
       return res.status(400).json({ error: 'Username must be a string.' });
     }
 
-    let user = await User.findOne({ username });
+    let user = await User.findOne({ username }).populate('mutuals');
 
     if (!user) {
       const githubResponse = await axios.get(
@@ -105,7 +105,9 @@ const updateUser = async (req, res) => {
 const sortByParams = async (req, res) => {
   const query = req.query.sortBy || 'repos_url';
   try {
-    const users = await User.find().sort({ [query]: -1 });
+    const users = await User.find()
+      .sort({ [query]: -1 })
+      .populate('mutuals');
     res.json(users);
   } catch (error) {
     console.error(error);
