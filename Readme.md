@@ -27,31 +27,31 @@ Welcome to the GitHub User Data Backend, a Node.js application that interacts wi
 
 1. Clone the repository:
 
-   ```bash
+   ```js
    https://github.com/Aftab0012/Autonomize_AI.git
    ```
 
 2. Change to the project directory:
 
-   ```bash
+   ```js
    cd Autonomize_AI
    ```
 
 3. Install server dependencies:
 
-   ```bash
+   ```js
    npm install
    ```
 
 4. Start the server:
 
-   ```bash
+   ```js
    npm start
    ```
 
 5. Please add a .env file with the following content to run the server:
 
-   ```bash
+   ```js
    MONGODB_URI={YOUR MONGODB CONNECTION STRING GOES HERE}
    ```
 
@@ -62,16 +62,16 @@ Welcome to the GitHub User Data Backend, a Node.js application that interacts wi
 #### Get User Data
 
 - **Endpoint:**
-  `GET /api/user/:username`
+  `GET https://autonomize123.onrender.com/api/user/:username`
 
 - **Example Request:**
 
-  ```bash
-  POSTMAN GET :- http://localhost:3002/api/user/mralexgray
+  ```js
+  POSTMAN GET :- https://autonomize123.onrender.com/api/user/mralexgray
   ```
 
 - **Example Response:**
-  ```bash
+  ```js
   {
     "username": "mralexgray",
     "location": "San Francisco",
@@ -88,7 +88,7 @@ Welcome to the GitHub User Data Backend, a Node.js application that interacts wi
 #### Search Users
 
 - **Endpoint:**
-  `GET http://localhost:3002/api/search/user`
+  `GET https://autonomize123.onrender.com/api/search/user`
 
 - **Query Parameters:**
 
@@ -96,12 +96,12 @@ Welcome to the GitHub User Data Backend, a Node.js application that interacts wi
 
 - **Example Request:**
 
-  ```bash
-  POSTMAN GET:- http://localhost:3002/api/search/user?q=mralexgray
+  ```js
+  POSTMAN GET:- https://autonomize123.onrender.com/api/search/user?q=mralexgray
   ```
 
 - **Example Response:**
-  ```bash
+  ```js
   {
     "message": "User found",
     "user": {
@@ -121,16 +121,16 @@ Welcome to the GitHub User Data Backend, a Node.js application that interacts wi
 #### Delete User
 
 - **Endpoint:**
-  `DELETE http://localhost:3002/api/user/:username`
+  `DELETE https://autonomize123.onrender.com/api/user/:username`
 
 - **Example Request:**
 
-  ```bash
-  POSTMAN DELETE :- http://localhost:3002/api/user/mralexgray
+  ```js
+  POSTMAN DELETE :- https://autonomize123.onrender.com/api/user/mralexgray
   ```
 
 - **Example Response:**
-  ```bash
+  ```js
   {
     "message": "User deleted",
     "user": {
@@ -150,18 +150,18 @@ Welcome to the GitHub User Data Backend, a Node.js application that interacts wi
 #### Update User
 
 - **Endpoint:**
-  `PATCH http://localhost:3002/api/user/:username`
+  `PATCH https://autonomize123.onrender.com/api/user/:username`
 
 - **Example Request:**
 
-  ```bash
-  POSTMAN PATCH :- http://localhost:3002/api/user/mralexgray
+  ```js
+  POSTMAN PATCH :- https://autonomize123.onrender.com/api/user/mralexgray
   ```
 
 ````
 
 - **Example Response:**
-```bash
+```js
 {
   "message": "User updated successfully",
   "user": {
@@ -183,33 +183,33 @@ Welcome to the GitHub User Data Backend, a Node.js application that interacts wi
 #### Get All Users
 
 - **Endpoint:**
-  `GET /api/allUsers`
+  `GET https://autonomize123.onrender.com/api/allUsers`
 
 - **Example Request:**
 
-  ```bash
-  POSTMAN GET :- http://localhost:3002/api/allUsers
+  ```js
+  POSTMAN GET :- https://autonomize123.onrender.com/api/allUsers
   ```
 
 - **Example Response:**
-  ```bash
+  ```js
   [
     {
-      "username": "user1",
-      "location": "City1",
-      "public_repos": 10,
-      "followers": 20,
-      "following": 15
+      username: 'user1',
+      location: 'City1',
+      public_repos: 10,
+      followers: 20,
+      following: 15,
     },
     {
-      "username": "user2",
-      "location": "City2",
-      "public_repos": 5,
-      "followers": 30,
-      "following": 25
+      username: 'user2',
+      location: 'City2',
+      public_repos: 5,
+      followers: 30,
+      following: 25,
     },
     // ... more users
-  ]
+  ];
   ```
 
 ### User Sorting
@@ -217,7 +217,7 @@ Welcome to the GitHub User Data Backend, a Node.js application that interacts wi
 #### Get Users Sorted by Fields
 
 - **Endpoint:**
-  `GET http://localhost:3002/api/allUsers?sortBy=public_repos`
+  `GET https://autonomize123.onrender.com/api/allUsers?sortBy=public_repos`
 
 - **Query Parameters:**
 
@@ -225,27 +225,27 @@ Welcome to the GitHub User Data Backend, a Node.js application that interacts wi
 
 - **Example Request:**
 
-  ```bash
+  ```js
   POSTMAN GET:- https://localhost:3002/api/allUsers?sortBy=public_repos
   ```
 
 - **Example Response:**
-  ```bash
+  ```js
   [
     {
-      "username": "user3",
-      "public_repos": 25
+      username: 'user3',
+      public_repos: 25,
     },
     {
-      "username": "user1",
-      "public_repos": 15
+      username: 'user1',
+      public_repos: 15,
     },
     {
-      "username": "user2",
-      "public_repos": 10
+      username: 'user2',
+      public_repos: 10,
     },
     // ... more users
-  ]
+  ];
   ```
 
 ### Mutual Friends
@@ -253,16 +253,16 @@ Welcome to the GitHub User Data Backend, a Node.js application that interacts wi
 #### Handle Mutual Friends
 
 - **Endpoint:**
-  `POST http://localhost:3002/api/addFriend/:username`
+  `POST https://autonomize123.onrender.com/api/addFriend/:username`
 
 - **Example Request:**
 
-  ```bash
-   POSTMAN POST :- https://localhost:3002/api/addFriend/mralexgray
+  ```js
+   POSTMAN POST :- https://autonomize123.onrender.com/api/addFriend/mralexgray
   ```
 
 - **Example req.body JSON format:**
-  ```bash
+  ```js
   {
   "following": "Add_any_users_userId/mongo_Id"
   }
@@ -271,7 +271,7 @@ Welcome to the GitHub User Data Backend, a Node.js application that interacts wi
 ````
 
 - **Example Response:**
-  ```bash
+  ```js
   {
     "message": "Mutual friends added successfully",
     "friends": [
