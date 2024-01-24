@@ -37,6 +37,13 @@ const userSchema = new mongoose.Schema(
     following: {
       type: Number,
     },
+    mutuals: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        default: null,
+      },
+    ],
   },
   { timestamps: true }
 );

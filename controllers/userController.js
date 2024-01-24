@@ -1,5 +1,6 @@
 const { default: axios } = require('axios');
 const User = require('../models/userModel.js');
+const Follow = require('../models/friendsModel.js');
 
 const getUser = async (req, res) => {
   const { username } = req.params;
@@ -107,10 +108,50 @@ const sortByParams = async (req, res) => {
   }
 };
 
+const handleMutualFriends = async (req, res) => {
+  const { username } = req.params;
+  try {
+    const user = await User.findOne({ username });
+    if (!user) {
+      return res.status(404).json({ message: 'User not found.' });
+    }
+
+    const { following } = req.body;
+
+    // Check if the follow relationship already exists
+    const existingFollow = await Follow.findOne({
+      follower: user._id,
+      following,
+    });
+    if (existingFollow) {
+      return res.status(400).json({ message: 'Already following this user.' });
+    }
+
+    if (user._id !== following) {
+      // Create a new follow relationship
+      const follow = new Follow({ follower: user._id, following });
+      await follow.save();
+
+      // Update the user being followed
+      await User.findByIdAndUpdate(following, {
+        $addToSet: { mutuals: user._id },
+      });
+
+      return res
+        .status(201)
+        .json({ message: 'Follow relationship created successfully.', follow });
+    }
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: 'Internal Server Error' });
+  }
+};
+
 module.exports = {
   getUser,
   searchUser,
   deleteUser,
   updateUser,
   sortByParams,
+  handleMutualFriends,
 };
