@@ -9,7 +9,6 @@ Welcome to the GitHub User Data Backend, a Node.js application that interacts wi
 - [Tech Stack](#tech-stack)
 - [Installation](#installation-for-local-environment)
 - [API Reference](#api-reference)
-  - [GitHub User API](#github-user-api)
   - [User Actions](#user-actions)
   - [User Search](#user-search)
   - [User Management](#user-management)
