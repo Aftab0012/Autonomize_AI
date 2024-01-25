@@ -19,41 +19,41 @@ Welcome to the GitHub User Data Backend, a Node.js application that interacts wi
 
 ### Tech Stack
 
-- [Node.js](https://nodejs.org/)
-- [Express.js](https://expressjs.com/)
+- [Node.bash](https://nodebash.org/)
+- [Express.bash](https://expressbash.com/)
 - [MongoDB](https://www.mongodb.com/)
-- [Mongoose](https://mongoosejs.com/)
+- [Mongoose](https://mongoosebash.com/)
 - [axios](https://github.com/axios/axios)
 
 ## Installation for Local Environment
 
 1. Clone the repository:
 
-   ```js
+   ```bash
    https://github.com/Aftab0012/Autonomize_AI.git
    ```
 
 2. Change to the project directory:
 
-   ```js
+   ```bash
    cd Autonomize_AI
    ```
 
 3. Install server dependencies:
 
-   ```js
+   ```bash
    npm install
    ```
 
 4. Start the server:
 
-   ```js
+   ```bash
    npm start
    ```
 
 5. Please add a .env file with the following content to run the server:
 
-   ```js
+   ```bash
    MONGODB_URI={YOUR MONGODB CONNECTION STRING GOES HERE}
    ```
 
@@ -68,12 +68,12 @@ Welcome to the GitHub User Data Backend, a Node.js application that interacts wi
 
 - **Example Request:**
 
-  ```js
+  ```bash
   POSTMAN GET :- https://autonomize123.onrender.com/api/user/mralexgray
   ```
 
 - **Example Response:**
-  ```js
+  ```bash
   {
     "username": "mralexgray",
     "location": "San Francisco",
@@ -98,12 +98,12 @@ Welcome to the GitHub User Data Backend, a Node.js application that interacts wi
 
 - **Example Request:**
 
-  ```js
+  ```bash
   POSTMAN GET:- https://autonomize123.onrender.com/api/search/user?q=mralexgray
   ```
 
 - **Example Response:**
-  ```js
+  ```bash
   {
     "message": "User found",
     "user": {
@@ -127,12 +127,12 @@ Welcome to the GitHub User Data Backend, a Node.js application that interacts wi
 
 - **Example Request:**
 
-  ```js
+  ```bash
   POSTMAN DELETE :- https://autonomize123.onrender.com/api/user/mralexgray
   ```
 
 - **Example Response:**
-  ```js
+  ```bash
   {
     "message": "User deleted",
     "user": {
@@ -156,14 +156,14 @@ Welcome to the GitHub User Data Backend, a Node.js application that interacts wi
 
 - **Example Request:**
 
-  ```js
+  ```bash
   POSTMAN PATCH :- https://autonomize123.onrender.com/api/user/mralexgray
   ```
 
 ````
 
 - **Example Response:**
-```js
+```bash
 {
   "message": "User updated successfully",
   "user": {
@@ -189,12 +189,12 @@ Welcome to the GitHub User Data Backend, a Node.js application that interacts wi
 
 - **Example Request:**
 
-  ```js
+  ```bash
   POSTMAN GET :- https://autonomize123.onrender.com/api/allUsers
   ```
 
 - **Example Response:**
-  ```js
+  ```bash
   [
     {
       username: 'user1',
@@ -227,12 +227,12 @@ Welcome to the GitHub User Data Backend, a Node.js application that interacts wi
 
 - **Example Request:**
 
-  ```js
+  ```bash
   POSTMAN GET:- https://localhost:3002/api/allUsers?sortBy=public_repos
   ```
 
 - **Example Response:**
-  ```js
+  ```bash
   [
     {
       username: 'user3',
@@ -259,12 +259,12 @@ Welcome to the GitHub User Data Backend, a Node.js application that interacts wi
 
 - **Example Request:**
 
-  ```js
+  ```bash
    POSTMAN POST :- https://autonomize123.onrender.com/api/addFriend/mralexgray
   ```
 
 - **Example req.body JSON format:**
-  ```js
+  ```bash
   {
   "following": "Add_any_users_userId/mongo_Id"
   }
@@ -273,7 +273,7 @@ Welcome to the GitHub User Data Backend, a Node.js application that interacts wi
 ````
 
 - **Example Response:**
-  ```js
+  ```bash
   {
     "message": "Mutual friends added successfully",
     "friends": [
